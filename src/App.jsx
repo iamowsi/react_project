@@ -1,5 +1,14 @@
-const App =()=>{
-    return <div>سلام رفقا</div>
-}
+import React from 'react';
+import FunctionalComponent from './FunctionalComponent';
+import ClassComponent from './ClassComponent';
 
-export default App
+const App = () => {
+  return (
+    <>
+      <FunctionalComponent />
+      <ClassComponent />
+    </>
+  );
+};
+
+export default App;
