@@ -1,11 +1,13 @@
-import React from 'react';
-import Car from './Car';   // این خط را اضافه کن
-
+import { useState } from "react";
 function App() {
+  const [text,setText] = useState("hello world junirour developer");
+  const changText=()=>{
+    setText("Hello World Hero");
+  };
   return (
     <div>
-      <Car make="toyota" model="camry" year="2012" color="blue" money="$5000"/>
-      <Car make="honda" model="125cdi" year="2025" color="red" money="$500"/>
+      <div id="text">{text}</div>
+      <button  onClick={changText}>Click Me</button>
     </div>
   );
 }
