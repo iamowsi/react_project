@@ -1,7 +1,6 @@
+import { useState } from "react";
 import UserInfo from "./UserInfo";
-
-function App() {
-  const users =[
+  const initialUsers =[
     {
       name : "mustafabaqeri",age:"22",email:"mowsibg@gmail.com"
     },
@@ -12,12 +11,17 @@ function App() {
     name : "baqeri",age:"12",email:"wsibg@gmail.com"
     }
   ]
-
+function App() {
+  const [users,setuser] = useState(initialUsers);
+  const handleDelete = (name)=>{
+    const  newUser=users.filter((user)=>user.name !== name);
+    setuser(newUser);
+  }
   return (
     <div>
       {users.map((user)=>(
-        <UserInfo key={user.name} name={user.name} age={user.age} email={user.email}/>
-      )
+        <UserInfo key={user.name}{...user} handleDelete={handleDelete}/>
+      ) 
 
       )}
     </div>
